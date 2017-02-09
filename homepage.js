@@ -1,8 +1,11 @@
 var express = require('express');
 var app = express();
 
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.get('/', function(req, res){
-   res.send('hello world');
+   res.render('index', { title: 'GCHOI' });
 });
 
 app.get('/shakenote', function(req, res){
