@@ -4,7 +4,6 @@ var MongoClient = require('mongodb').MongoClient
 var Server = require('mongodb').Server;
 var MongoClient = require("mongodb").MongoClient;
 var dbs;
-
 MongoClient.connect("mongodb://localhost:5050/crunchbase", function(err, dbs){
    console.log("connected to the DB");
 
