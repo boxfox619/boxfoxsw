@@ -1,27 +1,41 @@
 var express = require('express');
 var app = express();
-var MongoClient = require('mongodb').MongoClient
-var Server = require('mongodb').Server;
-var MongoClient = require("mongodb").MongoClient;
-var dbs;
-MongoClient.connect("mongodb://localhost:5050/crunchbase", function(err, dbs){
-   console.log("connected to the DB");
+var bodyParser = require('body-parser');
+var mongodb = require('./db_client');
 
-   var query = {"category_code" : "biotech"};
-   dbs.collection("companies").find(query).toArray(function(err, docs){
-       docs.forEach(function(doc){
-           console.log(doc.name + " is a " + doc.category_code  + "company")
-        });
-  })
-})
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.get('/', function(req, res){
-   dbs.collection('users').findOne({},function(err,doc){
-       if(err) throw err;
-       res.send(doc);
+ res.end('준비중 입니다.');
+});
+
+app.post('/signin', function(req, res){
+
+console.log('login');
+   var input_id = req.body.id;
+   var input_pwd = req.body.password;
+   if(input_id==null||input_pwd==null){
+	res.status(400).send('정보를 모두 입력해 주세요');
+   }else
+   mongodb.connect('boxfox', function(){
+	mongodb.db().collection('users').findOne({id:input_id}, function(err, user){
+	 if(err){throw err;}
+	 if(user){
+	  if(user.password==input_pwd){
+	  res.status(200).send('');
+	  }else{
+	  res.status(400).send('비밀번호가 일치하지 않습니다!');
+	  }
+	 }else{
+	 mongodb.db().collection("users").insert({id:input_id,password:input_pwd}, function(e){
+	  if(e){throw e;}
+	  res.status(200).send('회원가입 되었습니다.');
+	 }); 
+	 } 
+	});
    });
 });
 
@@ -29,7 +43,8 @@ app.get('/shakenote', function(req, res){
    res.send('shake note!');
 });
 
-var server = app.listen(80, function () {
+var server = app.listen(80, function (err) {
+   if(err){throw err;}
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
