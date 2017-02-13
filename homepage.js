@@ -7,9 +7,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+app.use(express.static('views'));
 
 app.get('/', function(req, res){
- res.end('준비중 입니다.');
+ res.sendfile(__dirname+'/views/index.html');
+});
+
+app.get('/css/', function(req, res){
+console.log(req.url);
 });
 
 app.post('/signin', function(req, res){
