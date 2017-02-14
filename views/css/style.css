@@ -416,10 +416,10 @@ header .logo a {
 	font: 0/0 a;
 	text-shadow: none;
 	color: transparent;
-	width: 42px;
-	height: 42px;
+	width: 44px;
+	height: 44px;
 	background: url("../images/logo.png") no-repeat center;
-	background-size: 42px 42px;
+	background-size: 40px 40px;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
