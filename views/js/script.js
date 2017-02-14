@@ -9,16 +9,67 @@ include('./js/superfish.js');
 include('./js/jquery.mobilemenu.js');
 
 
-/* DEVICE.JS AND SMOOTH SCROLLIG
-========================================================*/
-include('./js/jquery.mousewheel.min.js');
-include('./js/jquery.simplr.smoothscroll.min.js');
+$('.smoothscroll').on('click', function (e) {
+	 	
+	 	e.preventDefault();
 
-$(function () { 
-  if ($('html').hasClass('desktop')) {
-      $.srSmoothscroll({
-        step:150,
-        speed:800
+   	var target = this.hash,
+    	$target = $(target);
+
+    	$('html, body').stop().animate({
+       	'scrollTop': $target.offset().top
+      }, 800, 'swing', function () {
+      	window.location.hash = target;
       });
-  }   
-});
+
+  	});  
+
+	/*----------------------------------------------------*/
+	/*	Sticky Navigation
+	------------------------------------------------------*/
+   $(window).on('scroll', function() {
+
+		var y = $(window).scrollTop(),
+		    topBar = $('header');
+        topBarContent = $('header .row');
+    var offsetY = $('#intro').height();
+     
+	   if (y > offsetY) {
+        topBarContent.css('opacity',1);
+        topBar.css('opacity',1);
+	   }
+      else {
+        topBarContent.css('opacity',0);
+        topBar.css('opacity',0);
+      }
+    
+	});
+	
+
+	/*-----------------------------------------------------*/
+  	/* Mobile Menu
+   ------------------------------------------------------ */  
+   var toggleButton = $('.menu-toggle'),
+       nav = $('.main-navigation');
+
+   toggleButton.on('click', function(event){
+		event.preventDefault();
+
+		toggleButton.toggleClass('is-clicked');
+		nav.slideToggle();
+	});
+
+  	if (toggleButton.is(':visible')) nav.addClass('mobile');
+
+  	$(window).resize(function() {
+   	if (toggleButton.is(':visible')) nav.addClass('mobile');
+    	else nav.removeClass('mobile');
+  	});
+
+  	$('#main-nav-wrap li a').on("click", function() {   
+
+   	if (nav.hasClass('mobile')) {   		
+   		toggleButton.toggleClass('is-clicked'); 
+   		nav.fadeOut();   		
+   	}     
+  	});
