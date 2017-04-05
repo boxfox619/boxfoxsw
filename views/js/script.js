@@ -5,8 +5,6 @@ function include(url){
 
 /* Superfish menu
 ========================================================*/
-include('./js/superfish.js');
-include('./js/jquery.mobilemenu.js');
 
 
 $('.smoothscroll').on('click', function (e) {

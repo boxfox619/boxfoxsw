@@ -743,3 +743,45 @@ a.menu-toggle {
 		display: block !important;
 	}
 }
+
+
+
+/**
+ * ===================================================================
+ *
+ *  Content Item
+ * -------------------------------------------------------------------
+ */
+.introduce-item{
+	display: inline-block;
+	font-size: 60px;
+}
+
+.introduce-item i{
+	cursor: pointer;
+	border-style: solid;
+	border-color: white;
+	border-width: 3px;
+	border-radius: 100%;
+	padding: 20px;
+	color: white;
+	margin: 30px 30px;
+	transition:  all 0.5s;
+}
+
+.introduce-item i:hover{
+	border-color: #009EE3;
+	color: #009EE3;
+}
+
+@media only screen and (max-width:768px) {
+	.introduce-item{
+	font-size: 20px;
+	}
+}
+
+@media only screen and (min-width:769px) {
+	.introduce-item{
+		font-size: 60px;
+	}
+}
