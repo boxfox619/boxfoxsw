@@ -1,5 +1,6 @@
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,600);
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 
 /**
  * ===================================================================
@@ -745,43 +746,84 @@ a.menu-toggle {
 }
 
 
+/**
+ * ===================================================================
+ *
+ *  hexagon
+ * -------------------------------------------------------------------
+ */
+
+.icon-svg{
+	width: 15rem;
+	margin-top: -2.2rem;
+	display: inline-block;
+}
 
 /**
  * ===================================================================
  *
- *  Content Item
+ *  Diagonal layout
  * -------------------------------------------------------------------
  */
-.introduce-item{
-	display: inline-block;
-	font-size: 60px;
+
+.diagonal {
+	 z-index: 1;
+	 display: block;
+	 float: left;
+	 width: 100%;
+	 background: white;
+	 transform: skew(0deg,-5deg);
+	 -ms-transform: skew(0deg,-5deg);
+	 -webkit-transform: skew(0deg,-3deg);
+ 	 color: #fff;
+   background: #2196F3;
 }
 
-.introduce-item i{
-	cursor: pointer;
-	border-style: solid;
-	border-color: white;
-	border-width: 3px;
-	border-radius: 100%;
-	padding: 20px;
-	color: white;
-	margin: 30px 30px;
-	transition:  all 0.5s;
-}
+ .diagonal .container {
+	 text-align: right;
+ 	display: block;
+ 	float: left;
+ 	margin: 50px auto 100px;
+ 	width: 100%;
+ 	padding: 0 5%;
+ 	transform: skew(0deg,3deg);
+ 	-ms-transform: skew(0deg,5deg);
+ 	-webkit-transform: skew(0deg,3deg);
+ }
 
-.introduce-item i:hover{
-	border-color: #009EE3;
-	color: #009EE3;
-}
+ .diagonal-asc {
+	  z-index: 1;
+    display: block;
+    float: left;
+		margin-top: -100px;
+    width: 100%;
+    background: white;
+    transform: skew(0deg,5deg);
+    -ms-transform: skew(0deg,5deg);
+    -webkit-transform: skew(0deg,3deg);
+ 	color: #2196F3;
+  background: #ffffff;
+ }
 
-@media only screen and (max-width:768px) {
-	.introduce-item{
-	font-size: 20px;
+
+ .diagonal-asc .container {
+ 	display: block;
+ float: left;
+ margin: 50px auto 100px;
+ width: 100%;
+ padding: 0 5%;
+ transform: skew(0deg,-3deg);
+ -ms-transform: skew(0deg,-5deg);
+ -webkit-transform: skew(0deg,-3deg);
+ }
+
+ .diagonal-text{
+	  margin-top: -2rem;
+ }
+
+ @media only screen and (min-width:780px) {
+ 	.diagonal-text{
+		float:right;
+	 	  margin-top: 0;
 	}
-}
-
-@media only screen and (min-width:769px) {
-	.introduce-item{
-		font-size: 60px;
-	}
-}
+ }
