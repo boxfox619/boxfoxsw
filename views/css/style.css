@@ -413,8 +413,7 @@ a:hover, a:focus {
  */
 
  .logo-title{
-	font-weight: bold;
-	font-family: '';
+ 	font-family: 'Fredoka One', sans-serif;
 	margin: 100px 0 !important;
 	text-align:  center;
  }
@@ -857,6 +856,13 @@ a.menu-toggle {
  		-webkit-transform: skew(0deg,0deg);
  }
 
+ .diagonal-end > h1{
+	 font-family: 'Fredoka One', sans-serif;
+	 position:relative;
+	 margin-left: 50px;
+	 top: -15px;
+ }
+
  .icon-svg{
   width: 15rem;
   margin-top: -2.2rem;
@@ -898,4 +904,31 @@ a.menu-toggle {
   	.diagonal-text p{
 			line-height: 18px;
  	}
+ }
+
+
+
+ /**
+  * ===================================================================
+  *
+  *  footer
+  * -------------------------------------------------------------------
+  */
+
+ footer{
+	 padding: 20px 0 40px 0;
+	 margin-top: 10px;
+	 background: #36D1DC;  /* fallback for old browsers */
+	 background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
+	 background: linear-gradient(to right, #5B86E5, #36D1DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+
+ footer .company{
+	 margin: 15px 0;
+ 	 font-family: 'Fredoka One', sans-serif;
+	 font-size: 30px;
+ }
+
+ footer p{
+	 line-height: 15px;
  }
