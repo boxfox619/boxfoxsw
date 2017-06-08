@@ -165,6 +165,10 @@ a:hover, a:focus {
 	-ms-transform: translateY(-1.2rem);
 	transform: translateY(-1.2rem);
 }
+.intro-content .row{
+	margin: 0 !important;
+	padding: 0 !important;
+}
 .intro-content h1 {
 	color: #FFFFFF;
 	font-family: 'Jeju Gothic', sans-serif;
@@ -410,8 +414,8 @@ a:hover, a:focus {
 
  .logo-title{
 	font-weight: bold;
-	font-family: '' ;
-	margin: 100px;
+	font-family: '';
+	margin: 100px 0 !important;
 	text-align:  center;
  }
 
@@ -435,6 +439,8 @@ header .row {
 	position: relative;
   opacity: 0;
   transition: opacity 1s ease-out;
+	margin: 0 !important;
+	padding: 0!important;
 }
 
 header .logo {
@@ -750,6 +756,35 @@ a.menu-toggle {
 	#main-nav-wrap ul.main-navigation {
 		display: block !important;
 	}
+}
+
+/**
+ * ===================================================================
+ *
+ *  Pinterest layout
+ * -------------------------------------------------------------------
+ */
+
+.pinterest-cols {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 10px;
+  -moz-column-count: 4;
+  -moz-column-gap: 10px;
+  column-count: 4;
+  column-gap: 10px;
+}
+
+.pinterest-cols .item {
+  background: white;
+  margin: 0 0 10px 0;
+  text-align: center;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+}
+
+.pinterest-cols .item img {
+  max-width: 100%;
 }
 
 /**
