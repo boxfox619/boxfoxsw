@@ -745,20 +745,6 @@ a.menu-toggle {
 	}
 }
 
-
-/**
- * ===================================================================
- *
- *  hexagon
- * -------------------------------------------------------------------
- */
-
-.icon-svg{
-	width: 15rem;
-	margin-top: -2.2rem;
-	display: inline-block;
-}
-
 /**
  * ===================================================================
  *
@@ -817,13 +803,42 @@ a.menu-toggle {
  -webkit-transform: skew(0deg,-3deg);
  }
 
- .diagonal-text{
-	  margin-top: -2rem;
+
+
+ .icon-svg{
+  width: 15rem;
+  margin-top: -2.2rem;
+  display: inline-block;
  }
 
- @media only screen and (min-width:780px) {
- 	.diagonal-text{
-		float:right;
-	 	  margin-top: 0;
+ .diagonal .icon-svg{
+	 float:right;
 	}
+ .diagonal-asc .icon-svg{
+	 float:left;
+ 	}
+
+ .icon-svg polygon{
+  stroke-width:2;
+  stroke: white;
+ }
+
+	 .diagonal .diagonal-text{
+		 	float: right;
+			margin-top: 0;
+	 }
+	  .diagonal-asc .diagonal-text{
+	 	 float: left;
+			 margin-top: 0;
+		}
+
+ @media only screen and (max-width:920px) {
+ 	.diagonal-text{
+ 	  float: none !important;
+ 		margin-top: -1rem;
+		font-size: 13px;
+	}
+  	.diagonal-text p{
+			line-height: 18px;
+ 	}
  }
