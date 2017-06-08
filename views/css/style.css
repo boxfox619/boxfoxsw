@@ -35,7 +35,7 @@ body {
   font: 14px/24px Georgia, 'Times New Roman', Times, serif;
 	font-size: 1.6rem;
 	line-height: 3rem;
-	color: #737373;
+	color: #ffffff;
 }
 
 /**
@@ -408,6 +408,13 @@ a:hover, a:focus {
  * -------------------------------------------------------------------
  */
 
+ .logo-title{
+	font-weight: bold;
+	font-family: '' ;
+	margin: 100px;
+	text-align:  center;
+ }
+
 header {
 	width: 100%;
 	position: fixed;
@@ -752,8 +759,14 @@ a.menu-toggle {
  * -------------------------------------------------------------------
  */
 
+ section .container{
+	 width: 100% !important;
+	 margin: 0;
+	 padding: 0;
+	 display: block;
+ }
+
 .diagonal {
-	 z-index: 1;
 	 display: block;
 	 float: left;
 	 width: 100%;
@@ -778,7 +791,6 @@ a.menu-toggle {
  }
 
  .diagonal-asc {
-	  z-index: 1;
     display: block;
     float: left;
 		margin-top: -100px;
@@ -787,23 +799,28 @@ a.menu-toggle {
     transform: skew(0deg,5deg);
     -ms-transform: skew(0deg,5deg);
     -webkit-transform: skew(0deg,3deg);
- 	color: #2196F3;
-  background: #ffffff;
+ 		color: #2196F3;
+  	background: #ffffff;
  }
 
 
  .diagonal-asc .container {
  	display: block;
- float: left;
- margin: 50px auto 100px;
- width: 100%;
- padding: 0 5%;
- transform: skew(0deg,-3deg);
- -ms-transform: skew(0deg,-5deg);
- -webkit-transform: skew(0deg,-3deg);
+ 	float: left;
+ 	margin: 50px auto 100px;
+ 	width: 100%;
+ 	padding: 0 5%;
+ 	transform: skew(0deg,-3deg);
+ 	-ms-transform: skew(0deg,-5deg);
+ 	-webkit-transform: skew(0deg,-3deg);
  }
 
-
+ .diagonal-end{
+	 background-color: #14181E;
+ 		transform: skew(0deg,0deg);
+ 		-ms-transform: skew(0deg,0deg);
+ 		-webkit-transform: skew(0deg,0deg);
+ }
 
  .icon-svg{
   width: 15rem;
@@ -818,10 +835,15 @@ a.menu-toggle {
 	 float:left;
  	}
 
- .icon-svg polygon{
+ .diagonal .icon-svg polygon{
   stroke-width:2;
   stroke: white;
  }
+
+  .diagonal-asc .icon-svg polygon{
+   stroke-width:2;
+   stroke: #2196F3;
+  }
 
 	 .diagonal .diagonal-text{
 		 	float: right;
