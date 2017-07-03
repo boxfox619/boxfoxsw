@@ -55,6 +55,10 @@ a:hover, a:focus {
 	color: #ff7b29;
 }
 
+section{
+	padding-top:66px;
+}
+
 .section-intro {
 	max-width: 700px;
 	text-align: center;
@@ -414,7 +418,7 @@ a:hover, a:focus {
 
  .logo-title{
  	font-family: 'Fredoka One', sans-serif;
-	margin: 100px 0 !important;
+	margin: 5vh 0 !important;
 	text-align:  center;
  }
 
@@ -916,7 +920,8 @@ a.menu-toggle {
   */
 
  footer{
-	 padding: 20px 0 40px 0;
+	 min-height: 100vh;
+	 padding: 66px 0 40px 0;
 	 margin-top: 10px;
 	 background: #36D1DC;  /* fallback for old browsers */
 	 background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);  /* Chrome 10-25, Safari 5.1-6 */
